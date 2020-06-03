@@ -30,7 +30,7 @@ namespace TRANSACTION_FEE_CALCULATOR
             }
            
         }
-
+        //gets the service charge for the supplied amount.
         public static decimal? computeServiceCharge(decimal amount)
         {
             Fee feeObj =  getAppSettings();

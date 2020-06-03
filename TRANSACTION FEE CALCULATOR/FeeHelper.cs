@@ -26,6 +26,10 @@ namespace TRANSACTION_FEE_CALCULATOR
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Error Occured");
+                //Error can be logged here.
+                Console.ReadKey();
+                Environment.Exit(0);
                 throw ex;
             }
            

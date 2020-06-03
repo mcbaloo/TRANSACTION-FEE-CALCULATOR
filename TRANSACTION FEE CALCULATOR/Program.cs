@@ -31,7 +31,7 @@ namespace TRANSACTION_FEE_CALCULATOR
             }
             catch(Exception ex)
             {
-                Console.WriteLine("An Error Occured");
+                Console.WriteLine("Enter a Valid Number");
             }
             Console.ReadKey();
         }

@@ -11,16 +11,22 @@ namespace TRANSACTION_FEE_CALCULATOR
         static void Main(string[] args)
         {
             decimal amount;
-            Console.WriteLine("Kindly supply Amount to be transferred");
+            Console.WriteLine("Kindly Enter Amount to be transferred");
             //get the amount to be transferred;
             try
             {
                 amount = Convert.ToDecimal(Console.ReadLine());
                 //compute service charge
                 var charge = FeeHelper.computeServiceCharge(amount);
+                
                 if (charge != null)
                 {
-                    Console.WriteLine($"You will be charged {charge} naira for this transaction");
+                    var transferAmount = amount - Convert.ToDecimal(charge);
+                    Console.WriteLine($"Amount : {amount}");
+                    Console.WriteLine($"Transfer Amount: {transferAmount}");
+                    Console.WriteLine($"Bank Charge:  {charge}");
+
+                    Console.WriteLine($"Debit Amount: {transferAmount + FeeHelper.computeServiceCharge(transferAmount)}");
                     //proceed with other actions
                 }
                 else
